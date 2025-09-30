@@ -20,7 +20,7 @@ namespace Barlang.Pages
         }
 
         [BindProperty]
-        public Barlang Barlang { get; set; } = default!;
+        public Models.Barlang Barlang { get; set; } = default!;
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {

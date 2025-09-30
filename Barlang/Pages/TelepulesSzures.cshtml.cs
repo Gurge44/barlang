@@ -10,20 +10,26 @@ using Barlang.Models;
 
 namespace Barlang.Pages
 {
-    public class IndexModel : PageModel
+    public class TelepulesSzuresModel : PageModel
     {
         private readonly Barlang.Data.BarlangDbContext _context;
 
-        public IndexModel(Barlang.Data.BarlangDbContext context)
+        public TelepulesSzuresModel(Barlang.Data.BarlangDbContext context)
         {
             _context = context;
         }
 
+        [BindProperty(SupportsGet = true)]
+        public string KivalasztottTelepules { get; set; }
+
+
         public IList<Models.Barlang> Barlang { get;set; } = default!;
+        public IList<string> Telepulesek { get; set; }
 
         public async Task OnGetAsync()
         {
-            Barlang = await _context.Barlangok.ToListAsync();
+            Telepulesek = await _context.Barlangok.Select(x => x.telepules).Distinct().OrderBy(x => x).ToListAsync();
+            Barlang = await _context.Barlangok.Where(x => x.telepules == KivalasztottTelepules).ToListAsync();
         }
     }
 }

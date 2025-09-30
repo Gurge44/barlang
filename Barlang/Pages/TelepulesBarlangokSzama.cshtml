@@ -1,0 +1,25 @@
+﻿@page
+@model Barlang.Pages.TelepulesBarlangokSzamaModel
+@{
+}
+
+
+<h1>Barlangok Száma Településeken</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Település</th>
+            <th>Barlangok Száma</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var d in Model.Osszesito)
+        {
+            <tr>
+                <td>@d.telepules</td>
+                <td>@d.barlangokSzama</td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -25,7 +25,7 @@ namespace Barlang.Pages
         }
 
         [BindProperty]
-        public Barlang Barlang { get; set; } = default!;
+        public Models.Barlang Barlang { get; set; } = default!;
 
         // For more information, see https://aka.ms/RazorPagesCRUD.
         public async Task<IActionResult> OnPostAsync()
