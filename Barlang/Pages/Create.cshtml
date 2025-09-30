@@ -1,0 +1,59 @@
+﻿@page
+@model Barlang.Pages.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Barlang</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Barlang.nev" class="control-label"></label>
+                <input asp-for="Barlang.nev" class="form-control" />
+                <span asp-validation-for="Barlang.nev" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Barlang.hossz" class="control-label"></label>
+                <input asp-for="Barlang.hossz" class="form-control" />
+                <span asp-validation-for="Barlang.hossz" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Barlang.kiterjedes" class="control-label"></label>
+                <input asp-for="Barlang.kiterjedes" class="form-control" />
+                <span asp-validation-for="Barlang.kiterjedes" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Barlang.melyseg" class="control-label"></label>
+                <input asp-for="Barlang.melyseg" class="form-control" />
+                <span asp-validation-for="Barlang.melyseg" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Barlang.magassag" class="control-label"></label>
+                <input asp-for="Barlang.magassag" class="form-control" />
+                <span asp-validation-for="Barlang.magassag" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Barlang.telepules" class="control-label"></label>
+                <input asp-for="Barlang.telepules" class="form-control" />
+                <span asp-validation-for="Barlang.telepules" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

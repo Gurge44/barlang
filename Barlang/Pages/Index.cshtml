@@ -1,0 +1,66 @@
+﻿@page
+@model Barlang.Pages.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Barlang[0].nev)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Barlang[0].hossz)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Barlang[0].kiterjedes)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Barlang[0].melyseg)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Barlang[0].magassag)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Barlang[0].telepules)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Barlang) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.nev)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.hossz)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.kiterjedes)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.melyseg)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.magassag)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.telepules)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.id">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.id">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
